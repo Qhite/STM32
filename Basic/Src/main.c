@@ -17,8 +17,8 @@
  */
 
 #include <stdint.h>
-#include "rcc.h"
-#include "gpio.h"
+#include <rcc.h>
+#include <gpio.h>
 
 int main(void) {    
     set_clock();    // 16MHz
