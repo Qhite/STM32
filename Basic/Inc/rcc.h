@@ -17,6 +17,6 @@
 #define RCC_CFGR2       *(unsigned long*)   (RCC_ADDRESS+0x2C)
 #define RCC_CFGR2       *(unsigned long*)   (RCC_ADDRESS+0x30)
 
-void set_CLOCK() {}
+void set_clock();
 
 #endif

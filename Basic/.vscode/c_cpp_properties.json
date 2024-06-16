@@ -12,7 +12,7 @@
             "configurationProvider": "ms-vscode.cmake-tools",
             "intelliSenseMode": "${default}",
             "includePath": [
-                "$workspaceFolder/**"
+                "$workspaceFolder/Inc"
             ]
         }
     ]

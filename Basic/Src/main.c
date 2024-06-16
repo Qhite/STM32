@@ -17,12 +17,12 @@
  */
 
 #include <stdint.h>
-#include <rcc.h>
+#include "rcc.h"
+#include "gpio.h"
 
-int main(void) {
-    RCC_CFGR    = 0x00080002;   // 0000 0000 0000 1000 0000 0000 0000 0010;
-    RCC_CR      = 0x01000000;   // 0000 0001 0000 0000 0000 0000 0000 0000;
-    // PLL
+int main(void) {    
+    set_clock();    // 16MHz
+    set_gpio();     // PA8 -> MCO, PA0 -> Output
     
     /* Loop forever */
 	for(;;);

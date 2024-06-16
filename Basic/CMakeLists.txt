@@ -31,10 +31,18 @@ set(cpu_PARAMS
 )
 
 # Sources
-set(sources_SRCS)
+set(sources_SRCS
+    Src/main.c
+    Src/syscall.c
+    Src/sysmem.c
+    Startup/startup_stm32f303k8tx.s
+
+    Inc/rcc.c
+    Inc/gpio.c
+)
 
 # Include directories for all compilers
-set(include_DIRS)
+set(include_DIRS Inc)
 
 # Include directories for each compiler
 set(include_c_DIRS)
