@@ -21,7 +21,7 @@
 #include <gpio.h>
 
 int main(void) {    
-    set_clock();    // 16MHz
+    set_clock();    // CLK Setting 16MHz
     set_gpio();     // PA8 -> MCO, PA0 -> Output
     
     /* Loop forever */
