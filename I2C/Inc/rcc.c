@@ -15,7 +15,7 @@ void set_clock() {
     DMB();
     reg32 = RCC_CFGR;
     reg32 &= ~0x3800; // RCC_CFGR[13:11] PPRE2
-    RCC_CFGR = (reg32 | (PRESCALERDIV_2 << 11)); // PPRE2 set DIV_NONE
+    RCC_CFGR = (reg32 | (PRESCALERDIV_2 << 11)); // PPRE2 set DIV_2
     DMB();
     reg32 = RCC_CFGR;
     reg32 &= ~0x700; // RCC_CFGR[10:8] PPRE1

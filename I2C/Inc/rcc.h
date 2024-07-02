@@ -1,6 +1,8 @@
 #ifndef _RCC_H
 #define _RCC_H
 
+#include <stdint.h>
+
 #define RCC_ADDRESS 0x40021000
 
 #define RCC_CR          *(unsigned long*)   (RCC_ADDRESS+0x00)
@@ -15,7 +17,7 @@
 #define RCC_CSR         *(unsigned long*)   (RCC_ADDRESS+0x24)
 #define RCC_AHBRSTR     *(unsigned long*)   (RCC_ADDRESS+0x28)
 #define RCC_CFGR2       *(unsigned long*)   (RCC_ADDRESS+0x2C)
-#define RCC_CFGR2       *(unsigned long*)   (RCC_ADDRESS+0x30)
+#define RCC_CFGR3       *(unsigned long*)   (RCC_ADDRESS+0x30)
 
 #define RCC_CR_PLLRDY   (1 << 25)
 #define RCC_CR_PLLON    (1 << 24)
@@ -37,5 +39,7 @@
 #define SW          2 // 10     [1:0] PLL as system clk
 
 void set_clock();
+void i2c1_write(uint8_t desADDR, uint8_t regADDR, uint8_t data);
+void i2c1_read(uint8_t desADDR, uint8_t regADDR, uint8_t *data, uint8_t len);
 
 #endif
