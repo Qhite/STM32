@@ -1,6 +1,6 @@
-#include <gpio.h>
-#include <rcc.h>
 #include <stdint.h>
+#include <rcc.h>
+#include <gpio.h>
 
 void set_gpio() {
     RCC_AHBENR  |= (1 << 17);       // GPIOA Clock Enable

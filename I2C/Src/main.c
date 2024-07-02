@@ -20,9 +20,9 @@
 #include <rcc.h>
 #include <gpio.h>
 
-int main(void) {    
-    set_clock();    // CLK Setting 16MHz
-    set_gpio();     // PA8 -> MCO
+int main(void) {
+    set_clock();
+    set_gpio();
     
     /* Loop forever */
 	for(;;);
