@@ -38,15 +38,15 @@ int main(void) {
     i2c1_write(MPU6050_ADDRESS, MPU6050_PWR_MGMT_1, 0x00); // Init MPU6050
 
     /* Loop forever */
-	for(int i=0; i < 1; i++) {
-        i2c1_read(MPU6050_ADDRESS, MPU6050_ACCEL_XOUT_H, data, 6);
-        accel_x = (data[0] << 8) | data[1];
-        accel_y = (data[2] << 8) | data[3];
-        accel_z = (data[4] << 8) | data[5];
-        temp    = (data[6] << 8) | data[7];
-        gyro_x  = (data[8] << 8) | data[9];
-        gyro_y  = (data[10] << 8) | data[11];
-        gyro_z  = (data[12] << 8) | data[13];
-    }
+	// for(int i=0; i < 1; i++) {
+    //     i2c1_read(MPU6050_ADDRESS, MPU6050_ACCEL_XOUT_H, data, 6);
+    //     accel_x = (data[0] << 8) | data[1];
+    //     accel_y = (data[2] << 8) | data[3];
+    //     accel_z = (data[4] << 8) | data[5];
+    //     temp    = (data[6] << 8) | data[7];
+    //     gyro_x  = (data[8] << 8) | data[9];
+    //     gyro_y  = (data[10] << 8) | data[11];
+    //     gyro_z  = (data[12] << 8) | data[13];
+    // }
     while(1);
 }
