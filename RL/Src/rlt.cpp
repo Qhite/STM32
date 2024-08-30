@@ -35,29 +35,29 @@ void test() {
     typename MODEL_TYPE::Buffer<BATCH_SIZE> buffer;
 
     rlt::malloc(device, model);
-    rlt::init_weights(device, model, rng); // recursively initializes all layers using kaiming initialization
-    rlt::zero_gradient(device, model); // recursively zeros all gradients in the layers
-    rlt::reset_optimizer_state(device, optimizer, model);
-    rlt::malloc(device, buffer);
+    // rlt::init_weights(device, model, rng); // recursively initializes all layers using kaiming initialization
+    // rlt::zero_gradient(device, model); // recursively zeros all gradients in the layers
+    // rlt::reset_optimizer_state(device, optimizer, model);
+    // rlt::malloc(device, buffer);
 
-    rlt::MatrixDynamic<rlt::matrix::Specification<T, TI, BATCH_SIZE, INPUT_DIM_MLP>> input_mlp;
-    rlt::MatrixDynamic<rlt::matrix::Specification<T, TI, BATCH_SIZE, OUTPUT_DIM_MLP>> d_output_mlp;
-    rlt::malloc(device, input_mlp);
-    rlt::malloc(device, d_output_mlp);
+    // rlt::MatrixDynamic<rlt::matrix::Specification<T, TI, BATCH_SIZE, INPUT_DIM_MLP>> input_mlp;
+    // rlt::MatrixDynamic<rlt::matrix::Specification<T, TI, BATCH_SIZE, OUTPUT_DIM_MLP>> d_output_mlp;
+    // rlt::malloc(device, input_mlp);
+    // rlt::malloc(device, d_output_mlp);
 
-    for(TI i=0; i < 1000; i++){
-        rlt::zero_gradient(device, model);
-        T mse = 0;
-        for(TI batch_i=0; batch_i < 32; batch_i++){
-            rlt::randn(device, input_mlp, rng);
-            rlt::forward(device, model, input_mlp, buffer, rng);
-            T output_value = get(model.output_layer.output, 0, 0);
-            T target_output_value = rlt::max(device, input_mlp);
-            T error = target_output_value - output_value;
-            rlt::set(d_output_mlp, 0, 0, -error);
-            rlt::backward(device, model, input_mlp, d_output_mlp, buffer);
-            mse += error * error;
-        }
-        rlt::step(device, optimizer, model);
-    }
+    // for(TI i=0; i < 1000; i++){
+    //     rlt::zero_gradient(device, model);
+    //     T mse = 0;
+    //     for(TI batch_i=0; batch_i < 32; batch_i++){
+    //         rlt::randn(device, input_mlp, rng);
+    //         rlt::forward(device, model, input_mlp, buffer, rng);
+    //         T output_value = get(model.output_layer.output, 0, 0);
+    //         T target_output_value = rlt::max(device, input_mlp);
+    //         T error = target_output_value - output_value;
+    //         rlt::set(d_output_mlp, 0, 0, -error);
+    //         rlt::backward(device, model, input_mlp, d_output_mlp, buffer);
+    //         mse += error * error;
+    //     }
+    //     rlt::step(device, optimizer, model);
+    // }
 }
