@@ -155,6 +155,21 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=DISC
 
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=1.0.0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=1
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
+
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/arm-none-eabi-ranlib.exe
 
@@ -228,6 +243,109 @@ DISC_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 DISC_SOURCE_DIR:STATIC=C:/Users/hwlim/Projects/STM32/DISC
+
+//Git command line client
+GIT_EXECUTABLE:FILEPATH=C:/Program Files/Git/cmd/git.exe
+
+//Value Computed by CMake
+RLT_W_BINARY_DIR:STATIC=C:/Users/hwlim/Projects/STM32/DISC/Core/Incpp
+
+//Value Computed by CMake
+RLT_W_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+RLT_W_SOURCE_DIR:STATIC=C:/Users/hwlim/Projects/STM32/DISC/Core/Incpp
+
+//Enable the Accelerate gemm library, only available on Apple CPUs
+RL_TOOLS_BACKEND_ENABLE_ACCELERATE:BOOL=OFF
+
+//Enable Nvidia CUDA
+RL_TOOLS_BACKEND_ENABLE_CUDA:BOOL=OFF
+
+//Enable the MKL gemm library, only available on Intel CPUs
+RL_TOOLS_BACKEND_ENABLE_MKL:BOOL=OFF
+
+//Use "Release" to e.g. build fat binaries with code for all CUDA
+// architectures (not just for the GPU found in the machine used
+// to build it)
+RL_TOOLS_BUILD_TYPE:BOOL=OFF
+
+//Additional compiler flags
+RL_TOOLS_COMPILER_FLAGS:BOOL=OFF
+
+//Options like -ftemplate-backtrace-limit=0
+RL_TOOLS_DEBUG_COMPILER_OPTIONS:BOOL=OFF
+
+//Memory allocations are 64 byte / 512 bit aligned by default.
+// Disable the alignment of memory allocations
+RL_TOOLS_DISABLE_ALIGNED_MEMORY_ALLOCATIONS:BOOL=OFF
+
+//Disable CPU specific optimizations (e.g. for building portable
+// Docker containers)
+RL_TOOLS_DISABLE_CPU_SPECIFIC_OPTIMIZATIONS:BOOL=OFF
+
+//Enable BOOST beast (used in the multirotor UI)
+RL_TOOLS_ENABLE_BOOST_BEAST:BOOL=OFF
+
+//Enable cJSON
+RL_TOOLS_ENABLE_CJSON:BOOL=OFF
+
+//Enable (possibly unsafe) fast math operations
+RL_TOOLS_ENABLE_FAST_MATH:BOOL=OFF
+
+//Enable the GTK UI library
+RL_TOOLS_ENABLE_GTK:BOOL=OFF
+
+//Enable HDF5 to allow persisting data to disk
+RL_TOOLS_ENABLE_HDF5:BOOL=OFF
+
+//Enable JSON
+RL_TOOLS_ENABLE_JSON:BOOL=OFF
+
+//Enable the libattopng library to log images to TensorBoard
+RL_TOOLS_ENABLE_LIBATTOPNG:BOOL=OFF
+
+//Enable libwebsockets beast (used in the ui_server connection)
+RL_TOOLS_ENABLE_LIBWEBSOCKETS:BOOL=OFF
+
+//Enable link-time optimization
+RL_TOOLS_ENABLE_LTO:BOOL=OFF
+
+//Disable default targets
+RL_TOOLS_ENABLE_TARGETS:BOOL=OFF
+
+//Enable the Tensorboard logging interface
+RL_TOOLS_ENABLE_TENSORBOARD:BOOL=OFF
+
+//Build the unit tests when enabled.
+RL_TOOLS_ENABLE_TESTS:BOOL=OFF
+
+//Enable the Tracy Profiler
+RL_TOOLS_ENABLE_TRACY:BOOL=OFF
+
+//Enable the zlib compression library
+RL_TOOLS_ENABLE_ZLIB:BOOL=OFF
+
+//Use HighFive from conan (don't use the submodule from /external)
+RL_TOOLS_HDF5_HIGHFIVE_FROM_CONAN:BOOL=OFF
+
+//Including redistributables from the redistributable submodule
+RL_TOOLS_INSTALL_INCLUDE_REDISTRIBUTABLES:BOOL=OFF
+
+//Enable MuJoCo
+RL_TOOLS_RL_ENVIRONMENTS_ENABLE_MUJOCO:BOOL=OFF
+
+//Treat warnings as errors
+RL_TOOLS_WARNINGS_AS_ERRORS:BOOL=OFF
+
+//Value Computed by CMake
+RLtools_BINARY_DIR:STATIC=C:/Users/hwlim/Projects/STM32/DISC/Core/Incpp/rl-tools
+
+//Value Computed by CMake
+RLtools_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+RLtools_SOURCE_DIR:STATIC=C:/Users/hwlim/Projects/STM32/DISC/Core/Incpp/rl-tools
 
 //Value Computed by CMake
 stm32cubemx_BINARY_DIR:STATIC=C:/Users/hwlim/Projects/STM32/DISC/cmake/stm32cubemx
@@ -348,7 +466,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJDUMP
 CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
 //Platform information initialized
@@ -389,4 +507,8 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_TAPI-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding Git
+FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[C:/Program Files/Git/cmd/git.exe][v2.45.0.windows.1()]
+//ADVANCED property for variable: GIT_EXECUTABLE
+GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 
