@@ -1,0 +1,3 @@
+C:/Users/hwlim/Projects/STM32/I2C/CMakeFiles/I2C.dir
+C:/Users/hwlim/Projects/STM32/I2C/CMakeFiles/edit_cache.dir
+C:/Users/hwlim/Projects/STM32/I2C/CMakeFiles/rebuild_cache.dir

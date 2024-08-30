@@ -1,0 +1,3 @@
+C:/Users/hwlim/Projects/STM32/Basic/CMakeFiles/Basic.dir
+C:/Users/hwlim/Projects/STM32/Basic/CMakeFiles/edit_cache.dir
+C:/Users/hwlim/Projects/STM32/Basic/CMakeFiles/rebuild_cache.dir
