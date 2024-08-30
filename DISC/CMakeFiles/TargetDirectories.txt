@@ -1,0 +1,5 @@
+C:/Users/hwlim/Projects/STM32/DISC/CMakeFiles/DISC.dir
+C:/Users/hwlim/Projects/STM32/DISC/CMakeFiles/edit_cache.dir
+C:/Users/hwlim/Projects/STM32/DISC/CMakeFiles/rebuild_cache.dir
+C:/Users/hwlim/Projects/STM32/DISC/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+C:/Users/hwlim/Projects/STM32/DISC/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
