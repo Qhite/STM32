@@ -12,6 +12,7 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS ON)
 
+set(CMAKE_CXX_STANDARD 20)
 
 # Define the build type
 if(NOT CMAKE_BUILD_TYPE)
@@ -53,6 +54,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+    Drivers/CMSIS/DSP/Include
     external/rl-tools/include
     # Add user defined include paths
 )
