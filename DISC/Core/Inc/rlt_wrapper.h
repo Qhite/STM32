@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-void foo();
+void init_rlt();
 
 #ifdef __cplusplus
 }

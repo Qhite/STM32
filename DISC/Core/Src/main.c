@@ -120,7 +120,7 @@ int main(void)
   MX_USB_HOST_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  init_rlt();
   /* USER CODE END 2 */
 
   /* Infinite loop */
