@@ -1,5 +1,13 @@
 {
     "files.associations": {
-        "wrapper.h": "c"
+        "wrapper.h": "c",
+        "array": "cpp",
+        "*.tcc": "cpp",
+        "memory": "cpp",
+        "future": "cpp",
+        "istream": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp"
     }
 }
