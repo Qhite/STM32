@@ -1,5 +1,5 @@
-#ifndef WRAPPER_H
-#define WRAPPER_H
+#ifndef RLT_WRAPPER_H
+#define RLT_WRAPPER_H
 
 #ifdef __cplusplus
 extern "C" {
