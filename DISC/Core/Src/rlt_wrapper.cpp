@@ -23,7 +23,7 @@ using T     = float;
 
 constexpr TI BATCH_SIZE = 1;
 
-constexpr TI INPUT_DIM  = 5;
+constexpr TI INPUT_DIM  = 20;
 constexpr TI OUTPUT_DIM = 1;
 constexpr TI NUM_LAYERS = 3;
 constexpr TI HIDDEN_DIM = 64;
@@ -60,7 +60,7 @@ void init_rlt() {
 void train(float *mse) {
     rlt::zero_gradient(device, model);
     T mse_ = 0;
-    for(TI batch_i=0; batch_i < 256; batch_i++){
+    for(TI batch_i=0; batch_i < 64; batch_i++){
         rlt::randn(device, input_mlp, rng);
         rlt::forward(device, model, input_mlp, buffer, rng);
         T output_value = get(model.output_layer.output, 0, 0);

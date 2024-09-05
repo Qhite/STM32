@@ -129,7 +129,7 @@ int main(void)
 
   float mse;
   int epoch = 0;
-  uint32_t start, end, interv;
+  uint32_t start, end, interv = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
