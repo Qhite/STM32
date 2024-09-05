@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 #include <rl_tools/operations/arm.h>
-#include <rl_tools/nn/layers/dense/operations_arm/opt.h>
+// #include <rl_tools/nn/layers/dense/operations_arm/opt.h>
 #include <rl_tools/nn/layers/dense/operations_arm/dsp.h>
 #include <rl_tools/nn_models/sequential/operations_generic.h>
 
@@ -26,7 +26,7 @@ constexpr TI BATCH_SIZE = 1;
 constexpr TI INPUT_DIM  = 5;
 constexpr TI OUTPUT_DIM = 1;
 constexpr TI NUM_LAYERS = 3;
-constexpr TI HIDDEN_DIM = 10;
+constexpr TI HIDDEN_DIM = 64;
 
 constexpr auto ACTIVATION_FUNCTION  = rlt::nn::activation_functions::RELU;
 constexpr auto OUTPUT_ACTIVATION    = rlt::nn::activation_functions::IDENTITY;
@@ -43,7 +43,7 @@ OPTIMIZER optimizer;
 MODEL_TYPE model;
 typename MODEL_TYPE::Buffer<BATCH_SIZE> buffer;
 
-rlt::MatrixDynamic<rlt::matrix::Specification<T, TI, BATCH_SIZE, INPUT_DIM>> input_mlp, d_input_mlp;
+rlt::MatrixDynamic<rlt::matrix::Specification<T, TI, BATCH_SIZE, INPUT_DIM>> input_mlp;
 rlt::MatrixDynamic<rlt::matrix::Specification<T, TI, BATCH_SIZE, OUTPUT_DIM>> d_output_mlp;
 
 void init_rlt() {
@@ -53,15 +53,14 @@ void init_rlt() {
     rlt::reset_optimizer_state(device, optimizer, model);
 
     rlt::malloc(device, input_mlp);
-    rlt::malloc(device, d_input_mlp);
     rlt::malloc(device, d_output_mlp);
     return;
 }
 
-void train(float *out) {
+void train(float *mse) {
     rlt::zero_gradient(device, model);
-    T mse = 0;
-    for(TI batch_i=0; batch_i < 32; batch_i++){
+    T mse_ = 0;
+    for(TI batch_i=0; batch_i < 256; batch_i++){
         rlt::randn(device, input_mlp, rng);
         rlt::forward(device, model, input_mlp, buffer, rng);
         T output_value = get(model.output_layer.output, 0, 0);
@@ -69,10 +68,10 @@ void train(float *out) {
         T error = target_output_value - output_value;
         rlt::set(d_output_mlp, 0, 0, -error);
         rlt::backward(device, model, input_mlp, d_output_mlp, buffer);
-        mse += error * error;
+        mse_ += error * error;
     }
     rlt::step(device, optimizer, model);
-    *out = get(model.output_layer.output, 0, 0);
+    *mse = mse_ / 32;
 
     return;
 }

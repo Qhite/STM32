@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 void init_rlt();
-void train(float *out);
+void train(float *mse);
 
 #ifdef __cplusplus
 }

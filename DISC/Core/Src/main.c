@@ -127,7 +127,8 @@ int main(void)
   HAL_TIM_Base_Start(&htim2);
   init_rlt();
 
-  float out;
+  float mse;
+  int epoch = 0;
   uint32_t start, end, interv;
   /* USER CODE END 2 */
 
@@ -140,10 +141,12 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     start = __HAL_TIM_GET_COUNTER(&htim2);
-    train(&out);
+    train(&mse);
     end = __HAL_TIM_GET_COUNTER(&htim2);
+    HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
 
     interv = end - start;
+    epoch++;
     // HAL_Delay(100);
   }
   /* USER CODE END 3 */
