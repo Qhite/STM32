@@ -143,6 +143,7 @@ int main(void)
     start = __HAL_TIM_GET_COUNTER(&htim2);
     train(&mse);
     end = __HAL_TIM_GET_COUNTER(&htim2);
+    // printf("!!!\n");
     HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
 
     interv = end - start;
