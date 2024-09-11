@@ -9,5 +9,6 @@
         "functional": "cpp",
         "tuple": "cpp",
         "utility": "cpp"
-    }
+    },
+    "cortex-debug.variableUseNaturalFormat": true
 }
